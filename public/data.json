@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "John",
+    "class": "A",
+    "address": "123 Main St, Anytown, CA 123456",
+    "phone": "555-555-5555",
+    "isActive": "false",
+    "marks": {
+      "physics": [90, 55, 77],
+      "chemistry": [99, 88, 100],
+      "maths": [100, 100, 100]
+    },
+    "sports": {
+      "football": 1,
+      "basketball": -1
+    },
+    "remarks": ["Notes not submitted"]
+  },
+  {
+    "id": 2,
+    "name": "Jane",
+    "class": "B",
+    "address": "456 Elm St, Anytown, CA 234567",
+    "phone": "777-777-7777",
+    "isActive": "false",
+    "marks": {
+      "physics": [90, 55, 77],
+      "chemistry": [99, 88, 100],
+      "maths": [100, 100, 100]
+    },
+    "sports": {
+      "football": 1,
+      "basketball": -1
+    },
+    "remarks": ["Notes not submitted"]
+  },
+  {
+    "id": 3,
+    "name": "Jim",
+    "class": "C",
+    "address": "789 Elm St, Anytown, CA 345678",
+    "phone": "888-888-8888",
+    "isActive": "false",
+    "marks": {
+      "physics": [90, 55, 77],
+      "chemistry": [99, 88, 100],
+      "maths": [100, 100, 100]
+    },
+    "sports": {
+      "football": 1,
+      "basketball": -1
+    },
+    "remarks": ["Notes not submitted"]
+  }
+]

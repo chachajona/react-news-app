@@ -1,0 +1,11 @@
+{ 
+  "yoong": {
+    "role": ["user"]
+  },
+  "david": {
+    "role": ["user"]
+  },
+  "james": {
+    "role": ["user", "admin"]
+  }
+}
