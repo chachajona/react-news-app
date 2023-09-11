@@ -3,7 +3,7 @@ import React from 'react';
 import {Navigate, Outlet} from 'react-router-dom'
 
 const useAuth=()=>{
-  const user=localStorage.getItem('user')
+  const user=localStorage.getItem('cred')
   if(user){
     return true
   } else {
@@ -15,7 +15,7 @@ const  PublicRoutes=(props) =>{
 
   const auth=useAuth()
 
-  return auth?<Navigate to="/dashboard"/>: <Outlet/>
+  return auth?<Navigate to="/home"/>: <Outlet/>
 }
 
 export default PublicRoutes;

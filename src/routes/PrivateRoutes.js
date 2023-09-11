@@ -2,7 +2,12 @@ import React from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 const useAuth = () => {
-  return true;
+  const user = localStorage.getItem('cred')
+  if (user) {
+    return true
+  } else {
+    return false
+  }
 }
 
 const PrivateRoutes = (props) => {

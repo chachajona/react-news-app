@@ -1,35 +1,31 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./index.css";
 import LogedInOutlet from '../outlets/LogedInOutlet';
 import { clearUserInfo } from '../../utils/Common';
-import PrivateLinks from '../links/PrivateLinks';
 
 const Header = () => {
+  const user = localStorage.getItem('cred');
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <>
       <div className="header">
-        <PrivateLinks to="/"> 
-          <span> Home </span> 
-        </PrivateLinks>
-        <PrivateLinks to="users"> 
-          <span> Users </span>
-        </PrivateLinks>
-        <PrivateLinks to="settings"> 
-          <span> Settings </span>
-        </PrivateLinks>
-        <PrivateLinks to="usage"> 
-          <span> Usage </span>
-        </PrivateLinks>
-        <PrivateLinks to="login" onClick={()=> clearUserInfo()}>
-          <span> Logout </span>
-        </PrivateLinks>
+        {user ? (
+          <>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="users">Users</NavLink>
+            <NavLink to="settings">Settings</NavLink>
+            <NavLink to="usage">Usage</NavLink>
+            <NavLink to="login" onClick={clearUserInfo}>Logout</NavLink>
+          </>
+        ) : (
+          <NavLink to="login">Login</NavLink>
+        )}
       </div>
-      <div>
-        <LogedInOutlet />
-      </div>
-    </div>
-  )
-}
+      <LogedInOutlet />
+    </>
+  );
+};
 
 export default Header

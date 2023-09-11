@@ -6,6 +6,6 @@
     "role": ["user"]
   },
   "james": {
-    "role": ["user", "admin"]
+    "role": ["admin"]
   }
 }
