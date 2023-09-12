@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { NavLink ,useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
 import "./index.css";
-import PrivateLinks from '../../components/links/PrivateLinks';
 
 const Details = () => {
   
@@ -45,9 +44,9 @@ const Details = () => {
         Class: {user.class}
       </div>
       <div className="sub-menu">
-        <PrivateLinks to="" end> Marks </PrivateLinks>
-        <PrivateLinks to="sports"> Sports </PrivateLinks>
-        <PrivateLinks to="remarks"> Remarks </PrivateLinks>
+        <NavLink to="" end> Marks </NavLink>
+        <NavLink to="sports"> Sports </NavLink>
+        <NavLink to="remarks"> Remarks </NavLink>
       </div>
       <div className="details-body">
         <Outlet context={user}/>

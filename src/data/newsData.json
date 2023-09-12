@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Breaking News: Major Event",
+    "category": "Breaking",
+    "date": "2023-09-12",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://example.com/news-image-1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Technology Advancements",
+    "category": "Technology",
+    "date": "2023-09-10",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://example.com/news-image-2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Sports Update",
+    "category": "Sports",
+    "date": "2023-09-09",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://example.com/news-image-3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Entertainment News",
+    "category": "Entertainment",
+    "date": "2023-09-08",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://example.com/news-image-4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Business Insights",
+    "category": "Business",
+    "date": "2023-09-07",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://example.com/news-image-5.jpg"
+  }
+]

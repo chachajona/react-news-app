@@ -1,12 +1,10 @@
 import AppRoutes from './routes/AppRoutes';
-import Header from './components/Header';
-
+import "./App.css";
 function App() {
-
   return (
-    <div >
-      <AppRoutes/>
-    </div>
+      <div>
+        <AppRoutes/>
+      </div>
   );
 }
 
