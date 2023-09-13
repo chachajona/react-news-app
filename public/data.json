@@ -1,56 +1,92 @@
 [
   {
     "id": 1,
-    "name": "John",
-    "class": "A",
-    "address": "123 Main St, Anytown, CA 123456",
-    "phone": "555-555-5555",
-    "isActive": "false",
-    "marks": {
-      "physics": [90, 55, 77],
-      "chemistry": [99, 88, 100],
-      "maths": [100, 100, 100]
-    },
-    "sports": {
-      "football": 1,
-      "basketball": -1
-    },
-    "remarks": ["Notes not submitted"]
+    "author": "Yoong",
+    "title": "Breaking News: Major Event",
+    "category": "Breaking",
+    "date": "2023-09-12",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://images.unsplash.com/photo-1621077742331-2df96a07cca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2970&q=80"
   },
   {
     "id": 2,
-    "name": "Jane",
-    "class": "B",
-    "address": "456 Elm St, Anytown, CA 234567",
-    "phone": "777-777-7777",
-    "isActive": "false",
-    "marks": {
-      "physics": [90, 55, 77],
-      "chemistry": [99, 88, 100],
-      "maths": [100, 100, 100]
-    },
-    "sports": {
-      "football": 1,
-      "basketball": -1
-    },
-    "remarks": ["Notes not submitted"]
+    "author": "James",
+    "title": "Technology Advancements",
+    "category": "Technology",
+    "date": "2023-09-10",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://images.unsplash.com/photo-1496065187959-7f07b8353c55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
   },
   {
     "id": 3,
-    "name": "Jim",
-    "class": "C",
-    "address": "789 Elm St, Anytown, CA 345678",
-    "phone": "888-888-8888",
-    "isActive": "false",
-    "marks": {
-      "physics": [90, 55, 77],
-      "chemistry": [99, 88, 100],
-      "maths": [100, 100, 100]
-    },
-    "sports": {
-      "football": 1,
-      "basketball": -1
-    },
-    "remarks": ["Notes not submitted"]
+    "author": "David",
+    "title": "Sports Update",
+    "category": "Sports",
+    "date": "2023-09-09",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://images.unsplash.com/photo-1471295253337-3ceaaedca402?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2936&q=80"
+  },
+  {
+    "id": 4,
+    "author": "John",
+    "title": "Entertainment News",
+    "category": "Entertainment",
+    "date": "2023-09-08",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2804&q=80"
+  },
+  {
+    "id": 5,
+    "author": "Kevin",
+    "title": "Business Insights",
+    "category": "Business",
+    "date": "2023-09-07",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
+  },
+  {
+    "id": 6,
+    "author": "Peter",
+    "title": "New Medical Breakthrough",
+    "category": "Health",
+    "date": "2023-09-12",
+    "content": "Scientists have made a significant medical breakthrough...",
+    "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
+  },
+  {
+    "id": 7,
+    "author": "John",
+    "title": "Environmental Conservation Efforts",
+    "category": "Environment",
+    "date": "2023-09-11",
+    "content": "Efforts to protect the environment are gaining momentum...",
+    "image": "https://images.unsplash.com/photo-1452179535021-368bb0edc3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80"
+  },
+  {
+    "id": 8,
+    "author": "David",
+    "title": "Space Exploration Update",
+    "category": "Science",
+    "date": "2023-09-10",
+    "content": "The latest developments in space exploration have been announced...",
+    "image": "https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2406&q=80"
+  },
+  {
+    "id": 9,
+    "author": "John",
+    "title": "Cultural Festival 2023",
+    "category": "Culture",
+    "date": "2023-09-09",
+    "content": "The annual cultural festival is set to kick off this weekend...",
+    "image": "https://images.unsplash.com/photo-1535379665706-aea78de84a41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80"
+  },
+  {
+    "id": 10,
+    "author": "Peter",
+    "title": "Financial Markets Report",
+    "category": "Business",
+    "date": "2023-09-08",
+    "content": "A look at the latest trends in the financial markets...",
+    "image": "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80"
   }
 ]

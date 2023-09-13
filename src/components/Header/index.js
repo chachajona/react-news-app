@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from "react-router-dom";
 import LogedInOutlet from '../outlets/LogedInOutlet';
+import ThemeSwitcher from '../ThemeSwitcher/index';
 import { clearUserInfo } from '../../utils/Common';
 
 const Header = () => {
@@ -11,11 +12,10 @@ const Header = () => {
         <header>
           {user ? (
             <ul className="list-none flex justify-center gap-4">
-              <li className="p-2"><NavLink to="/">Home</NavLink></li>
-              <li className="p-2"><NavLink to="users">Users</NavLink></li>
-              <li className="p-2"><NavLink to="settings">Settings</NavLink></li>
-              <li className="p-2"><NavLink to="usage">Usage</NavLink></li>
+              <li className="p-2"><NavLink to="home">Home</NavLink></li>
+              <li className="p-2"><NavLink to="news">News</NavLink></li>
               <li className="p-2"><NavLink to="login" onClick={clearUserInfo}>Logout</NavLink></li>
+              <li className="p-2 absolute right-0 -top-1"><ThemeSwitcher /></li>
             </ul>
           ) : (
             <NavLink to="login">Login</NavLink>

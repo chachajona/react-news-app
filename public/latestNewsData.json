@@ -1,0 +1,42 @@
+[
+  {
+    "id": 6,
+    "title": "New Medical Breakthrough",
+    "category": "Health",
+    "date": "2023-09-12",
+    "content": "Scientists have made a significant medical breakthrough...",
+    "image": "https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80"
+  },
+  {
+    "id": 7,
+    "title": "Environmental Conservation Efforts",
+    "category": "Environment",
+    "date": "2023-09-11",
+    "content": "Efforts to protect the environment are gaining momentum...",
+    "image": "https://images.unsplash.com/photo-1452179535021-368bb0edc3a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2048&q=80"
+  },
+  {
+    "id": 8,
+    "title": "Space Exploration Update",
+    "category": "Science",
+    "date": "2023-09-10",
+    "content": "The latest developments in space exploration have been announced...",
+    "image": "https://images.unsplash.com/photo-1608178398319-48f814d0750c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2406&q=80"
+  },
+  {
+    "id": 9,
+    "title": "Cultural Festival 2023",
+    "category": "Culture",
+    "date": "2023-09-09",
+    "content": "The annual cultural festival is set to kick off this weekend...",
+    "image": "https://images.unsplash.com/photo-1535379665706-aea78de84a41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80"
+  },
+  {
+    "id": 10,
+    "title": "Financial Markets Report",
+    "category": "Business",
+    "date": "2023-09-08",
+    "content": "A look at the latest trends in the financial markets...",
+    "image": "https://images.unsplash.com/photo-1579532537598-459ecdaf39cc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3087&q=80"
+  }
+]

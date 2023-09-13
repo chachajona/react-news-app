@@ -1,61 +1,57 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { NavLink ,useParams, useNavigate, useLocation, Outlet } from 'react-router-dom';
-import "./index.css";
 
 const Details = () => {
   
   const location = useLocation();
   const state = location.state || {};
 
-  const { userId } = useParams();
+  const { newsId } = useParams();
 
-  const [user, setUser] = useState(state.data);
+  const [news, setNews] = useState(state.data);
 
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!user) {
+    if (!news) {
       axios('/data.json')
       .then((res) => {
         const data = res.data.find((item) => {
-          return item.id === parseInt(userId);
+          return item.id === parseInt(newsId);
         });
-        setUser(data);
+        setNews(data);
       });
     }
-  }, [userId, user]);
+  }, [newsId, news]);
 
-  if (!user) {
+  if (!news) {
     return null;
   }
   return (
-    <div className="page details">
-      <div className="title">
-        {user.name}
-      </div>
-      <div className="body">
-        Address: {user.address}
-      </div>
-      <div className="body">
-        Phone: {user.phone}
-      </div>
-      <div className="body">
-        Class: {user.class}
-      </div>
-      <div className="sub-menu">
-        <NavLink to="" end> Marks </NavLink>
-        <NavLink to="sports"> Sports </NavLink>
-        <NavLink to="remarks"> Remarks </NavLink>
-      </div>
+    <div className="p-4 md:p-10">
+      <section className="border-2 border-text flex flex-col p-5 md:p-10">
+        <h1 className="text-3xl md:text-5xl mb-5">{news.title}</h1>
+        <span>
+          {news.date} by <strong>{news.author}</strong>
+        </span>
+        <img
+          src={news.image}
+          alt="???"
+          className="w-full h-80 object-cover filter sepia-100 my-10"
+        />
+        <p className="text-lg md:text-xl text-justify">
+          {news.content}
+        </p>
+        <button className="border-2 border-text inline-block px-5 py-2 mt-10" onClick={() => {
+          navigate(-1);
+        }}>
+          Go Back
+        </button>
+      </section>
       <div className="details-body">
-        <Outlet context={user}/>
+        <Outlet context={news}/>
       </div>
-      <button onClick={() => {
-        navigate('/users');
-      }}>
-        Go Back
-      </button>
     </div>
   )
 }
