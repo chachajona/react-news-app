@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
 import Header from '../components/Header';
 import Home from '../containers/Home';
 import News from '../containers/News';
@@ -8,6 +9,7 @@ import Unauthorized from '../containers/Unauthorized';
 import Login from '../containers/Login';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
+import Layout from '../components/layout';
 
 const AppRoutes = () => {
   return (
@@ -20,7 +22,7 @@ const AppRoutes = () => {
 
         {/* private routes */}
         <Route path="" element={<PrivateRoutes />}>
-          <Route path="/" element={<Header />}>
+          <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="news" >
