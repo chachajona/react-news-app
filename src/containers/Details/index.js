@@ -30,7 +30,7 @@ const Details = () => {
   }
   return (
     <div className="p-4 md:p-10">
-      <section className="border-2 border-text flex flex-col p-5 md:p-10">
+      <section className="rounded-lg border-2 border-text flex flex-col p-5 md:p-10">
         <h1 className="text-3xl md:text-5xl mb-5">{news.title}</h1>
         <span>
           {news.date} by <strong>{news.author}</strong>
@@ -43,15 +43,12 @@ const Details = () => {
         <p className="text-lg md:text-xl text-justify">
           {news.content}
         </p>
-        <button className="border-2 border-text inline-block px-5 py-2 mt-10" onClick={() => {
+        <button className="rounded-md border-2 border-text inline-block px-5 py-2 mt-10 bg-indigo-600 text-white" onClick={() => {
           navigate(-1);
         }}>
           Go Back
         </button>
       </section>
-      <div className="details-body">
-        <Outlet context={news}/>
-      </div>
     </div>
   )
 }

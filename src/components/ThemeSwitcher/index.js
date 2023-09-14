@@ -15,6 +15,12 @@ const ThemeSwitcher = () => {
     localStorage.setItem('darkMode', darkMode);
   }, [darkMode]);
 
+  useEffect(() => {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      setDarkMode(e.matches);
+    })
+  })
+
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => !prevMode);
   };
