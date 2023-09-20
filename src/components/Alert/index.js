@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { removeAlert } from '../../store/alertSlice';
+import { useDispatch } from 'react-redux';
 import { InfoIcon, X, AlertCircle, XCircle, CheckCircle2 } from 'lucide-react';
 
 const bgColorTypes = {
@@ -33,14 +35,15 @@ const iconTypes = {
   success: <CheckCircle2 size="20" className="mr-3" />,
 }
 
-const Alert = ({ type, text }) => {
-  const [close, setClose] = useState("");
+const Alert = ({ id ,type, text }) => {
+
+  const dispatch = useDispatch();
 
   function handleClose() {
-    setClose("hidden");
+    dispatch(removeAlert(id));
   }
   return (
-    <div className={`flex rounded-lg p-4 ${textColorTypes[type] } ${bgColorTypes[type]} ${close}`}>
+    <div className={`flex rounded-lg p-4 ${textColorTypes[type] } ${bgColorTypes[type]}`}>
       {iconTypes[type]}
       <div className="text-sm font-medium"> {text} </div>
       <button 

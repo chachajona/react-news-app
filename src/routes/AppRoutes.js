@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from '../components/Header';
 import Home from '../containers/Home';
 import News from '../containers/News';
 import Details from '../containers/Details';
 import Unauthorized from '../containers/Unauthorized';
 import Login from '../containers/Login';
+import Register from '../containers/Register';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 import Layout from '../components/layout';
@@ -18,6 +18,7 @@ const AppRoutes = () => {
         <Route path="" element={<PublicRoutes />} >
             <Route index element={<Login />} />
             <Route path="login" element={<Login />}/>
+            <Route path="register" element={<Register />} />
         </Route>
 
         {/* private routes */}

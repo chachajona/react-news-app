@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { clearUserInfo } from "../../utils/Common";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import NewsCard from "../../components/NewsCard";
-import ThemeSwitcher from "../../components/ThemeSwitcher";
 
 import { MoveRight } from 'lucide-react';
 
@@ -51,10 +49,6 @@ const Home = () => {
               <NewsCard key={article.id} article={article}/>
             ))}
           </div>
-        </section>
-
-        <section className="mt-6">
-          <ThemeSwitcher />
         </section>
     </div>
   );
