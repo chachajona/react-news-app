@@ -1,37 +1,18 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'; // Import useDispatch from react-redux
-import { useNavigate } from 'react-router-dom';
-import { login } from '../../api/users';
-import Header from './Header';
-import Alert from '../../components/Alert';
-import ThemeSwitcher from '../../components/ThemeSwitcher';
-import { createAlert } from '../../store/alertSlice'; // Import your addAlert action
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { loginRequest } from "../../action/loginAction";
+import Header from "./Header";
+import Alert from "../../components/Alert";
+import ThemeSwitcher from "../../components/ThemeSwitcher";
 
 const Login = () => {
   const alerts = useSelector((state) => state.alert.alerts);
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState("");
   const dispatch = useDispatch(); // Get the dispatch function from Redux
-  const navigate = useNavigate();
-
-  const handleSubmit = () => {
-    login(user)
-      .then(() => {
-        navigate('/');
-        dispatch(
-          createAlert({
-            type: 'success',
-            text: 'Logged in successfully',
-          })
-        );
-      })
-      .catch(() => {
-        dispatch(
-          createAlert({
-            type: 'error',
-            text: 'Failed to log in',
-          })
-        );
-      });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(loginRequest(user));
   };
 
   return (
@@ -46,7 +27,10 @@ const Login = () => {
         linkUrl="/register"
       />
       <div className="w-full max-w-md mx-auto">
-        <form className="bg-white dark:bg-gray-600 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white dark:bg-gray-600 shadow-md rounded px-8 pt-6 pb-8 mb-4"
+        >
           <div className="mb-4">
             <label
               className="block text-gray-700 dark:text-white text-sm font-bold mb-2"
@@ -75,7 +59,7 @@ const Login = () => {
           </div>
           <button
             className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 mt-10"
-            onClick={handleSubmit}
+            type="submit"
           >
             Login
           </button>
@@ -84,7 +68,12 @@ const Login = () => {
       {/* Render your alerts */}
       <div className="w-full max-w-md mx-auto">
         {alerts.map((alert) => (
-          <Alert key={alert.id} id={alert.id} type={alert.type} text={alert.text} />
+          <Alert
+            key={alert.id}
+            id={alert.id}
+            type={alert.type}
+            text={alert.text}
+          />
         ))}
       </div>
     </div>
