@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginRequest } from "../../action/loginAction";
@@ -8,12 +8,23 @@ import ThemeSwitcher from "../../components/ThemeSwitcher";
 
 const Login = () => {
   const alerts = useSelector((state) => state.alert.alerts);
+  const isAuthenticated = useSelector((state) => state.login.isAuthenticated);
   const [user, setUser] = useState("");
   const dispatch = useDispatch(); // Get the dispatch function from Redux
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginRequest(user));
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/home");
+    } else {
+      navigate("/login");
+    }
+  }, [isAuthenticated]);
 
   return (
     <div className="min-h-full h-screen flex-col items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

@@ -6,3 +6,6 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
 
 export const LOGOUT = 'LOGOUT'
+
+export const SET_NEWS = 'SET_NEWS'
+export const SET_LATEST_NEWS = 'SET_LATEST_NEWS'

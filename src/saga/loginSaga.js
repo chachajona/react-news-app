@@ -1,6 +1,6 @@
 import { saveUserInfo } from "../utils/Common";
 import { fork, all, call, put, takeLatest, select } from "redux-saga/effects";
-import { SET_ALERT, LOGIN_REQUEST } from "../config/actionTypes";
+import { LOGIN_REQUEST } from "../config/actionTypes";
 import { createAlert } from "../store/alertSlice";
 import { loginSuccess, loginFail } from "../action/loginAction";
 import data from "../api/data.json";
@@ -27,7 +27,6 @@ function* loginSaga(data) {
     //inform redux that our login is successful
     yield put(loginSuccess(username));
     yield put(createAlert({ text: "Logged in successfully", type: "success" }));
-    yield put(push("/"));
   } catch (error) {
     //inform redux that our login is failed
     yield put(loginFail(error));
