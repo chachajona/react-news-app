@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getNews, getLatestNews } from "../../store/newsSlice";
 import NewsCard from '../../components/NewsCard';
 
+import store from "../../store";
+import newsReducer from "../../store/newsSlice";
+import newsSaga from "../../saga/newsSaga";
+
+store.injectReducer("news", newsReducer);
+store.injectSaga("news", newsSaga);
+
 const News = () => {
-  const [news, setNews] = useState([]);
-  const [latestNews, setLatestNews] = useState([]);
+  const news = useSelector((state) => state.news.news);
+  const latestNews = useSelector((state) => state.news.latestNews);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    axios("newsData.json")
-      .then((res) => setNews(res.data));
-  }, []);
-
-  useEffect(() => {
-    axios("latestNewsData.json")
-      .then((res) => setLatestNews(res.data));
-  }, []);
+    dispatch(getNews(news));
+    dispatch(getLatestNews(latestNews));
+  }, [dispatch]);
 
   return (
     <div className="container mx-auto py-6">

@@ -3,8 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { getNews, getLatestNews } from "../../store/newsSlice";
 import NewsCard from "../../components/NewsCard";
-
 import { MoveRight } from "lucide-react";
+
+import store from "../../store";
+import newsReducer from "../../store/newsSlice";
+import newsSaga from "../../saga/newsSaga";
+
+store.injectReducer("news", newsReducer);
+store.injectSaga("news", newsSaga);
 
 const Home = () => {
   const news = useSelector((state) => state.news.news);

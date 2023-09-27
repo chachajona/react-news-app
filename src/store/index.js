@@ -1,51 +1,23 @@
 import { history } from "../utils/history";
 import { routerMiddleware } from "connected-react-router";
+import { configureStore } from "@reduxjs/toolkit";
+import { setupListeners } from "@reduxjs/toolkit/query";
 import createSagaMiddleware from "redux-saga";
-import rootSaga from "../saga/rootSaga";
+import { rootSaga, createSagaInjector } from "../saga/rootSaga";
 import rootReducer from "../reducer/rootReducer";
-import { createStore, applyMiddleware, compose } from "redux"; // Import compose
 
 const sagaMiddleware = createSagaMiddleware();
 
-function createSagaInjector(runSaga, rootSaga) {
-    const injectedSagas = new Map();
-
-    const isInjected = key => injectedSagas.has(key);
-    const injectSaga = (key, saga) => {
-        if (isInjected(key)) return;
-
-        const task = runSaga(saga);
-
-        injectedSagas.set(key, task);
-    };
-    injectSaga('root', rootSaga);
-    return injectSaga;
-}
-
-export default function configureStore(initialState) {
-
-  const middlewares = [sagaMiddleware, routerMiddleware(history)];
-
-  // Use compose to combine store enhancers
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-  const store = createStore(
-    rootReducer(),
-    initialState,
-    composeEnhancers( // Apply the composed enhancer here
-      applyMiddleware(...middlewares)
-    )
-  );
-
-  store.runSaga = sagaMiddleware.run;
-  store.asyncReducers = {}
-
-  store.injectReducer = (key, asyncReducer) => {
-    store.asyncReducers[key] = asyncReducer
-    store.replaceReducer(rootReducer(store.asyncReducers))
-  }
-
-  store.injectSaga = createSagaInjector(store.runSaga, rootSaga);
-
-  return store;
-}
+const store = configureStore({
+  reducer: rootReducer(),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat([sagaMiddleware, routerMiddleware(history)]),
+});
+store.injectSaga = createSagaInjector(sagaMiddleware.run, rootSaga);
+store.asyncReducers = {};
+store.injectReducer = (key, asyncReducer) => {
+  store.asyncReducers[key] = asyncReducer;
+  store.replaceReducer(rootReducer(store.asyncReducers));
+};
+setupListeners(store.dispatch);
+export default store;

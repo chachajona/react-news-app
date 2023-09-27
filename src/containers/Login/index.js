@@ -6,6 +6,13 @@ import Header from "./Header";
 import Alert from "../../components/Alert";
 import ThemeSwitcher from "../../components/ThemeSwitcher";
 
+import store from "../../store";
+import loginReducer  from "../../reducer/loginReducer";
+import loginSaga from "../../saga/loginSaga";
+
+store.injectReducer("login", loginReducer);
+store.injectSaga("login", loginSaga);
+
 const Login = () => {
   const alerts = useSelector((state) => state.alert.alerts);
   const isAuthenticated = useSelector((state) => state.login.isAuthenticated);
