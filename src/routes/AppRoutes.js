@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '../containers/Home';
-import News from '../containers/News';
-import Details from '../containers/Details';
 import Unauthorized from '../containers/Unauthorized';
-import Login from '../containers/Login';
-import Register from '../containers/Register';
 import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 import Layout from '../components/layout';
 
+const Home = lazy(() => wait(import('../containers/Home')));
+const News = lazy(() => wait(import('../containers/News')));
+const Details = lazy(() => wait(import('../containers/Details')));
+const Login = lazy(() => wait(import('../containers/Login')));
+const Register = lazy(() => wait(import('../containers/Register')));
 const AppRoutes = () => {
   return (
       <Routes>
@@ -36,5 +36,11 @@ const AppRoutes = () => {
       </Routes>
   );
 };
+
+function wait(promise) {
+  return new Promise(resolve => {
+    setTimeout(resolve, 2000);
+  }).then(() => promise);
+}
 
 export default AppRoutes;

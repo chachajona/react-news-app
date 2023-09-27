@@ -6,12 +6,19 @@ import newsSlice from '../store/newsSlice';
 import { connectRouter } from 'connected-react-router';
 import { history } from '../utils/history';
 
-const rootReducer = combineReducers({
+const staticReducers = {
   login: loginReducer, 
   theme: themeSlice, 
   alert: alertSlice,
   news: newsSlice,
-  router: connectRouter(history), 
-});
+  router: connectRouter(history),
+}
+
+function rootReducer(asyncReducers) {
+  return combineReducers({
+    ...staticReducers,
+    ...asyncReducers,
+  });
+}
 
 export default rootReducer;
